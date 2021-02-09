@@ -1,5 +1,6 @@
 import React from 'react'
 import ChooseSubreddit from './ChooseSubreddit'
+
 import ErrorMessage from './ErrorMessage'
 import LoadSubreddit from './LoadSubreddit'
 import SubredditList from './SubredditList'
@@ -11,9 +12,9 @@ function App () {
     <div className='app'>
       <ErrorMessage />
       <ChooseSubreddit />
-      <LoadSubreddit>
+      {/* <LoadSubreddit> */}
         <WaitIndicator />
-      </LoadSubreddit>
+      {/* </LoadSubreddit> */}
       <SubredditList />
     </div>
   )

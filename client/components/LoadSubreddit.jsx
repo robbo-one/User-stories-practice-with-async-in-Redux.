@@ -2,11 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchPosts } from '../actions'
 
-function LoadSubreddit ({ children, dispatch }) {
-  console.log(children)
+function LoadSubreddit (props,{ children, dispatch }) {
+  // console.log(children)
   return (
     <div>
-      <button onClick={() => dispatch(fetchPosts('newzealand'))}>
+      <button onClick={() => props.dispatch(fetchPosts(props.subreddit))}>
     Fetch Posts
       </button>
       {children}
@@ -14,4 +14,10 @@ function LoadSubreddit ({ children, dispatch }) {
   )
 }
 
-export default connect()(LoadSubreddit)
+function mapStateToProps(globalState) {
+  return {
+    subreddit: globalState.subreddit
+  }
+} 
+
+export default connect(mapStateToProps)(LoadSubreddit)

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { fetchPosts } from '../actions'
+import { fetchPosts, updateSubreddit } from '../actions'
 
 
 function ChooseSubreddit (props) {
@@ -8,11 +8,13 @@ function ChooseSubreddit (props) {
     const [subreddit, setSubreddit] = useState("")
 
     const handleChange = (e) => {
-        console.log(e.target.value)
+        setSubreddit(e.target.value)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        props.dispatch(updateSubreddit(subreddit))
+        props.dispatch(fetchPosts(subreddit))
     }
 
   return (
