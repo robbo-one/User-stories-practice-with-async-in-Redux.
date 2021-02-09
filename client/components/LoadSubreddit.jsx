@@ -6,7 +6,7 @@ function LoadSubreddit ({ children, dispatch }) {
   return (
     <div>
       <button onClick={() => dispatch(fetchPosts('newzealand'))}>
-    Fetch Posts
+    Fetch Posts (NZ subreddits)
       </button>
       {children}
     </div>
