@@ -11,6 +11,7 @@ export function requestPosts () {
 }
 
 export function receivePosts (posts) {
+  console.log(posts)
   return {
     type: RECEIVE_POSTS,
     posts: posts.map(post => post.data)
