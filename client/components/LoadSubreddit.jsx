@@ -11,10 +11,10 @@ function LoadSubreddit ({ children, dispatch }) {
 
     const handleSubmit = (event) => {
       event.preventDefault();
-      dispatch(fetchPosts(newSubreddit))
+      dispatch(fetchPosts(newSubreddit));
       setNewSubreddit("");
     }
-
+    
   return (
     <div>
       <button onClick={() => dispatch(fetchPosts('newzealand'))}>
@@ -25,7 +25,6 @@ function LoadSubreddit ({ children, dispatch }) {
         <input type="text" name="value" onChange={handleChange} value={newSubreddit} />
         <button>View a new subbreddit</button> 
       </form>
-      
     </div>
   )
 }
