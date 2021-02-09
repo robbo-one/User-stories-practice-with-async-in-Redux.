@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchPosts } from '../actions'
 
 function LoadSubreddit ({ children, dispatch }) {
+  console.log(children)
   return (
     <div>
       <button onClick={() => dispatch(fetchPosts('newzealand'))}>
