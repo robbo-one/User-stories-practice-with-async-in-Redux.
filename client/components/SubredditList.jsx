@@ -13,6 +13,7 @@ function Subreddit ({ subreddits }) {
           title={post.title}
           dateTime={post.created}
           selftext={post.selftext}
+          thumbnail={post.thumbnail}
         />}
       )}
     </div>
