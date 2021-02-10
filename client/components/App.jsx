@@ -4,6 +4,7 @@ import ErrorMessage from './ErrorMessage'
 import LoadSubreddit from './LoadSubreddit'
 import SubredditList from './SubredditList'
 import WaitIndicator from './WaitIndicator'
+import CatsFacts from './CatsFacts'
 
 function App () {
   return (
@@ -13,6 +14,7 @@ function App () {
         <WaitIndicator />
       </LoadSubreddit>
       <SubredditList />
+      <CatsFacts />
     </div>
   )
 }
