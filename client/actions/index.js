@@ -1,8 +1,10 @@
 import request from 'superagent'
 
+
 export const SHOW_ERROR = 'SHOW_ERROR'
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 export const REQUEST_POSTS = 'REQUEST_POSTS'
+export const REQUEST_DOG = 'REQUEST_DOG'
 
 export function requestPosts () {
   return {
@@ -36,5 +38,23 @@ export function fetchPosts (subreddit) {
       .catch(err => {
         dispatch(showError(err.message))
       })
+  }
+}
+
+
+
+export function requestDog (dog) {
+  return {
+    type: REQUEST_DOG,
+    dog: dog
+  }
+}
+
+export function getRandomDog () {
+  const baseUrl = 'https://dog.ceo/api/breeds/'
+  return (dispatch) => {
+    return request.get(baseUrl + 'image/random')
+    .then(res => {res.body.message
+     dispatch(requestDog(res.body.message))})
   }
 }
