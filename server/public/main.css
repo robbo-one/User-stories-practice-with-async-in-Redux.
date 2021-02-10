@@ -25,7 +25,7 @@ body {
 
 .subtext {
   color: rgb(104, 230, 20);
-  max-width: 50%;
+  max-width: 30%;
 }
 
 img {
@@ -36,4 +36,12 @@ img {
 
 iframe {
   margin: 20px;
+}
+
+.date {
+  color: white;
+}
+
+li {
+  margin: 10px;
 }

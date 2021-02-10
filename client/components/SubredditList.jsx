@@ -10,6 +10,7 @@ function Subreddit ({ subreddits }) {
         <Post
           key={i}
           title={post.title}
+          date={post.created_utc * 1000}
           selftext={post.selftext}
           isYoutubeClip={post['secure_media'] && post['secure_media'].type == 'youtube.com'}
           url_overridden_by_dest={post.url_overridden_by_dest}

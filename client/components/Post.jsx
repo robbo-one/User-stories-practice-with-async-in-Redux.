@@ -1,10 +1,12 @@
 import React from 'react'
+import moment from 'moment'
 
-function Post ({ title, selftext, url_overridden_by_dest, isYoutubeClip }) {
+function Post ({ title, date, selftext, url_overridden_by_dest, isYoutubeClip }) {
   return (
   <div>
     <ul>
       <li className='title'>{title}</li>
+      <li className='date'>{moment(date).format('MMMM Do YYYY, h:mm:ss a')}</li>
       {selftext && (
         <li className='subtext'>{selftext}</li>
       )}
