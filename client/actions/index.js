@@ -1,8 +1,11 @@
 import request from 'superagent'
+import { getDadJokes } from '../api/dadjoke'
 
 export const SHOW_ERROR = 'SHOW_ERROR'
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 export const REQUEST_POSTS = 'REQUEST_POSTS'
+export const SET_DAD_JOKES = 'SET_DAD_JOKES'
+// export const ADD_DAD_JOKE = 'ADD_DAD_JOKE'
 
 export function requestPosts () {
   return {
@@ -21,6 +24,32 @@ export function showError (errorMessage) {
   return {
     type: SHOW_ERROR,
     errorMessage: errorMessage
+  }
+}
+
+export function setDadJokes (jokes){
+  return {
+    type: SET_DAD_JOKES,
+    jokes: jokes
+  }
+}
+
+// export function addDadJoke (joke) {
+//   return {
+//     type: SET_DAD_JOKES,
+//     joke: joke
+//   }
+// }
+
+export function fetchJokes () {
+  return dispatch => {
+    getDadJokes()
+    .then(jokes => {
+      dispatch(setDadJokes(jokes))
+    })
+    .catch(err => {
+      dispatch(showError(err.message))
+    })
   }
 }
 
