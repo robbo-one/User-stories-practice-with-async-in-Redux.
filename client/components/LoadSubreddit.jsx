@@ -17,8 +17,11 @@ function LoadSubreddit ({ children, dispatch }) {
   return (
     <div>
       <button onClick={() => dispatch(fetchPosts('newzealand'))}>
+      
     Fetch Posts
-      </button>
+      </button>  
+      <br></br>
+      <br></br>
       {children}
     <form onSubmit={handleSubmit}>
     <input type='text' name='name' onChange={handlechange} placeholder='newzealand'/>
