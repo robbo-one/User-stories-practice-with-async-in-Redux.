@@ -28,6 +28,7 @@ function LoadSubreddit ({ dispatch }) {
     Fetch Posts
       </button>
       <WaitIndicator />
+
       <form onSubmit={handleSubmit}>
     {message && <span className="message">{message}</span>}
     <label>
@@ -35,6 +36,7 @@ function LoadSubreddit ({ dispatch }) {
       <input type="text" name="name" onChange={(event) => handleChange(event)} required={true}/>
     </label>
   </form>
+  
     </div>
   )
 }

@@ -10,6 +10,8 @@ function Subreddit ({ subreddits }) {
         <Post
           key={i}
           title={post.title}
+          ups={post.ups}
+          post={post}
         />
       )}
     </div>
