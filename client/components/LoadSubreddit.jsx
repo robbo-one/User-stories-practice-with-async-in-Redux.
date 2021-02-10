@@ -5,7 +5,7 @@ import { fetchPosts } from '../actions'
 function LoadSubreddit (props) {
   const { children, dispatch } = props
 
-  const [page, setPage] = useState('newzealand')
+  const [page, setPage] = useState('')
   
   const handleChange = (value) => {
     setPage(value)
@@ -21,7 +21,7 @@ function LoadSubreddit (props) {
       <form onSubmit={(event) => handleSubmit(event)}>
         <label>
           Enter New Subreddit:
-          <input type='text' name='page' value={page} onChange={(event) => handleChange(event.target.value)} />
+          <input type='text' name='page' value={page} placeholder='darkweb' onChange={(event) => handleChange(event.target.value)} />
         </label>
         <button>
           Fetch Posts

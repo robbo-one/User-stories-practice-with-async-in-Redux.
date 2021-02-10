@@ -11,6 +11,8 @@ function Subreddit ({ subreddits }) {
           key={i}
           title={post.title}
           selftext={post.selftext}
+          isYoutubeClip={post['secure_media'] && post['secure_media'].type == 'youtube.com'}
+          url_overridden_by_dest={post.url_overridden_by_dest}
         />
       )}
     </div>
