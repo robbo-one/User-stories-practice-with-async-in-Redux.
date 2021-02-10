@@ -52,7 +52,7 @@ export function requestFacts () {
 export function receiveFacts (facts) {
   return {
     type: RECEIVE_FACTS,
-    facts: facts.map(fact => fact.text)
+    facts: facts.text
   }
 }
 

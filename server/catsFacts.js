@@ -7,7 +7,7 @@ router.use(express.json())
 
 router.get('/', (req, res) => {
   request
-    .get(`https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=3`)
+    .get(`https://cat-fact.herokuapp.com/facts/random`)
     .end((err, result) => {
       if (err) {
         res.status(500).send(err.message)

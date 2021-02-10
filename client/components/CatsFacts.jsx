@@ -8,10 +8,7 @@ console.log(props.catFacts)
     <div>
       <button type="submit" onClick={() => props.dispatch(fetchCatFacts())}>Get facts about cats</button>
 
-      <div></div>{props.catFacts.map(fact =>
-        <ul>
-          <li>{fact}</li>
-        </ul> )}    
+      <div>{props.catFacts}</div> 
     </div>
   )
 
