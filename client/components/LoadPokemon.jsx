@@ -21,15 +21,21 @@ function LoadPokemon ({ children, dispatch, pokemon }) {
         {children}
       </div>
       <div>
-        <Pokemon 
+        {pokemon.name && <Pokemon 
           name={pokemon.name} 
           order={pokemon.order}
-          image={pokemon.sprites.official-artwork.front_default}
-        />
+          image={pokemon.sprites.other["official-artwork"]['front_default']}
+        />}
       </div>
     </>
 
   )
 }
 
-export default connect()(LoadPokemon)
+function mapStateToProps (state) {
+  return {
+    pokemon: state.pokemon
+  }
+}
+
+export default connect(mapStateToProps)(LoadPokemon)

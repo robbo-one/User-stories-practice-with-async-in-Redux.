@@ -54,6 +54,7 @@ export function fetchPokemon (pokemon) {
     return request
       .get(`/api/v1/pokeapi/pokemon/${pokemon}`)
       .then(res => {
+        console.log(res.body)
         dispatch(recievePokemon(res.body))
         return null
       })

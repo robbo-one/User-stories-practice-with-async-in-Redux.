@@ -1,8 +1,10 @@
-import { RECEIVE_POKEMON } from '../actions'
+import { RECIEVE_POKEMON } from '../actions'
 
-function pokemon (state = [], action) {
+function pokemon (state = {}, action) {
+  console.log(action)
   switch (action.type) {
-    case RECEIVE_POKEMON:
+    case RECIEVE_POKEMON:
+      console.log(action)
       return action.pokemon
 
     default:
