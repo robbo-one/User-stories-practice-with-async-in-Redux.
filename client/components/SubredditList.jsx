@@ -5,7 +5,6 @@ import moment from 'moment'
 import Post from './Post'
 
 function Subreddit ({ subreddits }) {
-  console.log(subreddits)
   return (
     <div>
       {subreddits.map((post, i) =>
