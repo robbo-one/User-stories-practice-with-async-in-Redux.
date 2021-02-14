@@ -6,9 +6,6 @@ const NewSubreddit = (props) => {
   const { children, dispatch } = props
   const [page, setPage] = useState('')
 
-
-
-
 const handleChange = (value) => {
   setPage(value)
 }
@@ -24,7 +21,7 @@ const handleSubmit = (event) => {
         <label>
           New subreddit::
           <input type="text" name="page" value={page} onChange={(event) => handleChange(event.target.value)} /> 
-        </label>
+        </label><br></br>
       
       <button>
     Fetch Reddit Posts

@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchPosts } from '../actions'
+import { fetchCards } from '../actions/apis/cards'
 
-function LoadSubreddit ({ children, dispatch }) {
+function LoadPlanets ({ children, dispatch }) {
   return (
     <div>
-      <button onClick={() => dispatch(fetchPosts('ColorizedHistory'))}>
+      <button onClick={() => dispatch(fetchCards('ColorizedHistory'))}>
     Fetch Posts (History in Colour)
       </button>
       {children}
